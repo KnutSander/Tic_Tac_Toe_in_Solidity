@@ -48,7 +48,7 @@ contract TicTacToe {
       * @param c position c
       **/    
     function _threeInALine(uint a, uint b, uint c) private view returns (bool){
-        /*Please complete the code here.*/
+        return a == b && b == c;
     }
 
     /**
@@ -58,6 +58,7 @@ contract TicTacToe {
      */
     function _getStatus(uint pos) private view returns (uint) {
         /*Please complete the code here.*/
+        return status;
     }
 
     /**
@@ -66,7 +67,11 @@ contract TicTacToe {
      * @param pos the position the player places at
      */
     modifier _checkStatus(uint pos) {
-        /*Please complete the code here.*/
+      // Game must be ongoing 
+      // TODO: Implement messages based on game outcome
+      require(status == 0, "GAME OVER: The game is over")
+        _;
+        // TODO: Check and change the status of the game
     }
 
     /**
@@ -74,7 +79,7 @@ contract TicTacToe {
      * @return true if it's msg.sender's turn otherwise false
      */
     function myTurn() public view returns (bool) {
-       /*Please complete the code here.*/
+      return players[turn-1] == msg.sender;
     }
 
     /**
@@ -82,7 +87,8 @@ contract TicTacToe {
      * update the turn after a move
      */
     modifier _myTurn() {
-      /*Please complete the code here.*/
+      require(players[turn-1] == msg.sender)
+      _;
     }
 
     /**
@@ -91,7 +97,7 @@ contract TicTacToe {
      * @return true if valid otherwise false
      */
     function validMove(uint pos) public view returns (bool) {
-      /*Please complete the code here.*/
+      return board[pos] == 0 && (pos => 0 && pos < 9);
     }
 
     /**
@@ -99,7 +105,13 @@ contract TicTacToe {
      * @param pos the position the player places at
      */
     modifier _validMove(uint pos) {
-      /*Please complete the code here.*/
+      require(pos => 0 && pos < 9,
+        "INVALID MOVE: Moves must be between board positions 0 and 8");
+
+      require(board[pos] == 0,
+        "INVALID MOVE: Board position already played");
+      
+      _;
     }
 
     /**
@@ -107,7 +119,7 @@ contract TicTacToe {
      * @param pos the position the player places at
      */
     function move(uint pos) public _validMove(pos) _checkStatus(pos) _myTurn {
-        board[pos] = turn;
+      board[pos] = turn;
     }
 
     /**

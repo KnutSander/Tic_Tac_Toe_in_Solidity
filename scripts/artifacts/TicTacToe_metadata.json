@@ -1,0 +1,179 @@
+{
+	"compiler": {
+		"version": "0.4.26+commit.4563c3fc"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "myTurn",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "status",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "showBoard",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint256[9]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"name": "pos",
+						"type": "uint256"
+					}
+				],
+				"name": "move",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "turn",
+				"outputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "pos",
+						"type": "uint256"
+					}
+				],
+				"name": "validMove",
+				"outputs": [
+					{
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "players",
+				"outputs": [
+					{
+						"name": "",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"name": "opponent",
+						"type": "address"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			}
+		],
+		"devdoc": {
+			"methods": {
+				"move(uint256)": {
+					"details": "a player makes a move",
+					"params": {
+						"pos": "the position the player places at"
+					}
+				},
+				"myTurn()": {
+					"details": "check if it's msg.sender's turn",
+					"return": "true if it's msg.sender's turn otherwise false"
+				},
+				"showBoard()": {
+					"details": "show the current board",
+					"return": "board"
+				},
+				"validMove(uint256)": {
+					"details": "check a move is valid",
+					"params": {
+						"pos": "the position the player places at"
+					},
+					"return": "true if valid otherwise false"
+				}
+			},
+			"title": "TicTacToe contract*"
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"scripts/TicTacToe.sol": "TicTacToe"
+		},
+		"evmVersion": "byzantium",
+		"libraries": {},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"scripts/TicTacToe.sol": {
+			"keccak256": "0x67e2bc907943a872e52123acd2e922583721afb3218f651bde650fbcd776c51f",
+			"urls": [
+				"bzzr://5c103d94a6bbfb23a3a5d9b5e47888f8ae70969060c4870168e4fa3ad9d04514"
+			]
+		}
+	},
+	"version": 1
+}
