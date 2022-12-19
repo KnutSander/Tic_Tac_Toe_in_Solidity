@@ -130,23 +130,23 @@
 				"move(uint256)": {
 					"details": "a player makes a move",
 					"params": {
-						"pos": "the position the player places at"
+						"pos": "the position the player places at DONE"
 					}
 				},
 				"myTurn()": {
 					"details": "check if it's msg.sender's turn",
-					"return": "true if it's msg.sender's turn otherwise false"
+					"return": "true if it's msg.sender's turn otherwise false DONE"
 				},
 				"showBoard()": {
 					"details": "show the current board",
-					"return": "board"
+					"return": "board DONE"
 				},
 				"validMove(uint256)": {
 					"details": "check a move is valid",
 					"params": {
 						"pos": "the position the player places at"
 					},
-					"return": "true if valid otherwise false"
+					"return": "true if valid otherwise false DONE"
 				}
 			},
 			"title": "TicTacToe contract*"
@@ -169,9 +169,9 @@
 	},
 	"sources": {
 		"scripts/TicTacToe.sol": {
-			"keccak256": "0x67e2bc907943a872e52123acd2e922583721afb3218f651bde650fbcd776c51f",
+			"keccak256": "0x0e43ea452ca44e84e43e6d68cdb8f567cd3fcb213b56039f4314ccdf1ed8afcd",
 			"urls": [
-				"bzzr://5c103d94a6bbfb23a3a5d9b5e47888f8ae70969060c4870168e4fa3ad9d04514"
+				"bzzr://c46d009ac07f06dcc7e4c37239fc1ed1b90f8c1e5c7023075fdc4a2779194316"
 			]
 		}
 	},
