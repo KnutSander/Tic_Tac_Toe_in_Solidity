@@ -49,7 +49,7 @@ contract TicTacToe {
       * DONE
       **/    
     function _threeInALine(uint a, uint b, uint c) private view returns (bool){
-        return a == b && b == c;
+        return a == 0 ? false : a == b && b == c;
     }
 
     /**
@@ -76,21 +76,21 @@ contract TicTacToe {
       
       // Check rows
       for(uint i = 0; i < 9; i += 3){
-        if(_threeInALine(board[i], board[i+1], board[i+2]) && board[i] != 0){
+        if(_threeInALine(board[i], board[i+1], board[i+2])){
           status = board[i];
         }
       }
           
       // Check columns
       for(uint j = 0; j < 3; j++){
-        if(_threeInALine(board[j], board[j+3], board[j+6]) && board[i] != 0){
+        if(_threeInALine(board[j], board[j+3], board[j+6])){
           status = board[j];
         }
       }
 
       // Check diagonals
-      if((_threeInALine(board[0], board[4], board[8]) || 
-         _threeInALine(board[2], board[4], board[6])) && board[4] != 0){
+      if(_threeInALine(board[0], board[4], board[8]) || 
+         _threeInALine(board[2], board[4], board[6])){
           status = board[4];
       }
       
